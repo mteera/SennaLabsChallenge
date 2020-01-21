@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		B5747B2C23D59FEB0070BE4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5747B2B23D59FEB0070BE4A /* ViewController.swift */; };
 		B5747B3123D59FED0070BE4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5747B3023D59FED0070BE4A /* Assets.xcassets */; };
 		B5747B3423D59FED0070BE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5747B3223D59FED0070BE4A /* LaunchScreen.storyboard */; };
+		B5BC041023D6D5A000F5750A /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC040F23D6D5A000F5750A /* RestaurantDetailViewController.swift */; };
 		C955765EC77D6F38AB2C203F /* Pods_SennaLabChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A3FA4F6236AFE8AB7FBBC /* Pods_SennaLabChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		B5747B3023D59FED0070BE4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5747B3323D59FED0070BE4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5747B3523D59FED0070BE4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5BC040F23D6D5A000F5750A /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		B79A3FA4F6236AFE8AB7FBBC /* Pods_SennaLabChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SennaLabChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,7 +56,6 @@
 				40CC456472BCB01DAA8F8536 /* Pods-SennaLabChallenge.debug.xcconfig */,
 				4D0D91DEC70FE2A0FF0B314F /* Pods-SennaLabChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				B5747B2B23D59FEB0070BE4A /* ViewController.swift */,
+				B5BC040F23D6D5A000F5750A /* RestaurantDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +259,7 @@
 			files = (
 				B51CAF2523D632F60015877C /* CustomTableViewCell.swift in Sources */,
 				B5747B2C23D59FEB0070BE4A /* ViewController.swift in Sources */,
+				B5BC041023D6D5A000F5750A /* RestaurantDetailViewController.swift in Sources */,
 				B51CAF1E23D617EA0015877C /* Service.swift in Sources */,
 				B5747B2823D59FEB0070BE4A /* AppDelegate.swift in Sources */,
 				B51CAF2123D6183D0015877C /* Restaurant.swift in Sources */,

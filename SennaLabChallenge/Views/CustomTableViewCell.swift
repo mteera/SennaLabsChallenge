@@ -15,9 +15,10 @@ class CustomTableViewCell: UITableViewCell {
         didSet {
             guard let restaurant = restaurant else { return }
             titleLabel.text = restaurant.name
-            
+            descriptionLabel.text = restaurant.kind
             guard let urlString = restaurant.image else { return }
             
+            // Kingfisher helps handle asyncchronous image downloding and caching. This saves time instead of having to handle this by yourself.
             let url = URL(string: urlString)
             let placeholder = UIImage(named: "placeholder")
             mainImageView.kf.setImage(with: url, placeholder: placeholder)
@@ -35,15 +36,15 @@ class CustomTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem Ipsum"
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray
         label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
@@ -94,13 +95,7 @@ class CustomTableViewCell: UITableViewCell {
         
        
     }
-    
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
