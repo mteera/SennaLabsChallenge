@@ -38,3 +38,52 @@ class HeaderCell: BaseTableViewCell {
         
     }
 }
+
+
+class MetaCell: BaseTableViewCell {
+    
+    
+    var restaurant: Restaurant? {
+        didSet {
+            guard let restaurant = restaurant else { return }
+            titleLabel.text = restaurant.name
+            descriptionLabel.text = restaurant.kind
+        }
+    }
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Lorem Ipsum"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "45฿"
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 17)
+        return label
+    }()
+    
+    
+    override func setupViews() {
+        
+
+        
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 4
+        
+        addSubview(stackView)
+        
+        stackView.anchor(topAnchor, bottom: bottomAnchor, topConstant: 15, bottomConstant: 15)
+        stackView.centerInSuperview()
+        
+    }
+}

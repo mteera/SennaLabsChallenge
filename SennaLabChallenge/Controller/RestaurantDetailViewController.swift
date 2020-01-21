@@ -12,7 +12,9 @@ class RestaurantDetailViewController: UITableViewController {
     
     // Using variables rather than explicit string helps reduce the chance for mistakes and for better maintainablity.
     fileprivate var headerCellId = "headerCell"
+    fileprivate var metaCellId = "metaCell"
     fileprivate var menuCellId = "menuCell"
+    
     var restaurant: Restaurant? {
         didSet {
             guard let restaurant = restaurant else { return }
@@ -36,6 +38,7 @@ class RestaurantDetailViewController: UITableViewController {
     //Using enum to handle the section makes for easier reading and better maintainability especially when dealing with different types of sections.
     enum TableSection: Int {
         case header
+        case meta
         case menus
         case total
     }
@@ -48,6 +51,7 @@ class RestaurantDetailViewController: UITableViewController {
     
     fileprivate func registerCells() {
         tableView.register(HeaderCell.self, forCellReuseIdentifier: headerCellId)
+        tableView.register(MetaCell.self, forCellReuseIdentifier: metaCellId)
         tableView.register(MenuCell.self, forCellReuseIdentifier: menuCellId)
     }
     
@@ -58,8 +62,6 @@ class RestaurantDetailViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case TableSection.header.rawValue:
-            return 1
         case TableSection.menus.rawValue:
             if let menus = restaurant?.menus {
                 
@@ -68,7 +70,7 @@ class RestaurantDetailViewController: UITableViewController {
             
             return Int()
         default:
-           return Int()
+           return 1
 
         }
 
@@ -83,7 +85,14 @@ class RestaurantDetailViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: headerCellId) as? HeaderCell else { fatalError() }
             
             cell.restaurant = self.restaurant
-            cell.backgroundColor = .blue
+
+            return cell
+            
+            case TableSection.meta.rawValue:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: metaCellId) as? MetaCell else { fatalError() }
+                
+            cell.restaurant = self.restaurant
+                
 
             return cell
             
@@ -111,8 +120,10 @@ class RestaurantDetailViewController: UITableViewController {
         case TableSection.header.rawValue:
             return 200
             
-            case TableSection.menus.rawValue:
-                return 100
+        case TableSection.meta.rawValue:
+            return UITableView.automaticDimension
+        case TableSection.menus.rawValue:
+            return 100
         default:
             return CGFloat()
 
