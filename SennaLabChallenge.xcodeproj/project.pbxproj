@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51CAF1E23D617EA0015877C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CAF1D23D617EA0015877C /* Service.swift */; };
+		B51CAF2123D6183D0015877C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CAF2023D6183D0015877C /* Restaurant.swift */; };
+		B51CAF2523D632F60015877C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CAF2423D632F60015877C /* CustomTableViewCell.swift */; };
+		B51CAF2823D633490015877C /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CAF2723D633490015877C /* UIView+Anchors.swift */; };
 		B5747B2823D59FEB0070BE4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5747B2723D59FEB0070BE4A /* AppDelegate.swift */; };
 		B5747B2A23D59FEB0070BE4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5747B2923D59FEB0070BE4A /* SceneDelegate.swift */; };
 		B5747B2C23D59FEB0070BE4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5747B2B23D59FEB0070BE4A /* ViewController.swift */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B51CAF1D23D617EA0015877C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B51CAF2023D6183D0015877C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		B51CAF2423D632F60015877C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		B51CAF2723D633490015877C /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		B5747B2423D59FEB0070BE4A /* SennaLabChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SennaLabChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5747B2723D59FEB0070BE4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5747B2923D59FEB0070BE4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +43,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B51CAF1C23D617DF0015877C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B51CAF1D23D617EA0015877C /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B51CAF1F23D618320015877C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B51CAF2023D6183D0015877C /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B51CAF2223D62F0B0015877C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5747B2B23D59FEB0070BE4A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B51CAF2323D632D20015877C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51CAF2423D632F60015877C /* CustomTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B51CAF2623D633360015877C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B51CAF2723D633490015877C /* UIView+Anchors.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B5747B1B23D59FEB0070BE4A = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +102,13 @@
 		B5747B2623D59FEB0070BE4A /* SennaLabChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B51CAF2623D633360015877C /* Helper */,
+				B51CAF2323D632D20015877C /* Views */,
+				B51CAF2223D62F0B0015877C /* Controller */,
+				B51CAF1F23D618320015877C /* Model */,
+				B51CAF1C23D617DF0015877C /* Service */,
 				B5747B2723D59FEB0070BE4A /* AppDelegate.swift */,
 				B5747B2923D59FEB0070BE4A /* SceneDelegate.swift */,
-				B5747B2B23D59FEB0070BE4A /* ViewController.swift */,
 				B5747B3023D59FED0070BE4A /* Assets.xcassets */,
 				B5747B3223D59FED0070BE4A /* LaunchScreen.storyboard */,
 				B5747B3523D59FED0070BE4A /* Info.plist */,
@@ -134,9 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51CAF2523D632F60015877C /* CustomTableViewCell.swift in Sources */,
 				B5747B2C23D59FEB0070BE4A /* ViewController.swift in Sources */,
+				B51CAF1E23D617EA0015877C /* Service.swift in Sources */,
 				B5747B2823D59FEB0070BE4A /* AppDelegate.swift in Sources */,
+				B51CAF2123D6183D0015877C /* Restaurant.swift in Sources */,
 				B5747B2A23D59FEB0070BE4A /* SceneDelegate.swift in Sources */,
+				B51CAF2823D633490015877C /* UIView+Anchors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
