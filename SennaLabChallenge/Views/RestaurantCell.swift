@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class CustomTableViewCell: UITableViewCell {
+class RestaurantCell: BaseTableViewCell {
     
     var restaurant: Restaurant? {
         didSet {
@@ -81,6 +81,8 @@ class CustomTableViewCell: UITableViewCell {
         cardView.addSubview(mainImageView)
         cardView.addSubview(titleLabel)
         cardView.addSubview(descriptionLabel)
+        
+        // Using this extension makes for easier autoLayout to reduce time take to develop UI.
         
         cardView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 30, rightConstant: 15)
         

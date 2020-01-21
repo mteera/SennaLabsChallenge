@@ -25,6 +25,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // No-storyboard approch as it is easier to maintain, less time spent rendering and better control when developing interface.
+
         view.backgroundColor = .white
         tableView.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490727782, blue: 0.9489068389, alpha: 1)
         edgesForExtendedLayout = [.top, .bottom]
@@ -37,6 +40,7 @@ class ViewController: UITableViewController {
         activityIndicatorView.centerInSuperview()
         registerCells()
 
+        // Using singletons helps reduce DRY code and better maintanability.
         Service.shared.getRestaurants { (restaurants, error) in
             
             if let error = error {
@@ -46,6 +50,8 @@ class ViewController: UITableViewController {
             guard let restaurants = restaurants else { return }
             self.restaurants = restaurants
 
+            
+            // tableView must be reloaded on the main thread.
             DispatchQueue.main.async {
                 self.activityIndicatorView.stopAnimating()
 
@@ -58,7 +64,7 @@ class ViewController: UITableViewController {
 
 
     fileprivate func registerCells() {
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(RestaurantCell.self, forCellReuseIdentifier: cellId)
     }
     
     
@@ -69,7 +75,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? CustomTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? RestaurantCell else { fatalError() }
         
         let restaurant = restaurants[indexPath.row]
         cell.restaurant = restaurant
@@ -77,8 +83,10 @@ class ViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+        let restaurant = restaurants[indexPath.row]
+        let restauantDetailVC = RestaurantDetailViewController()
+        restauantDetailVC.restaurant = restaurant
+        navigationController?.present(restauantDetailVC, animated: true, completion: nil)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

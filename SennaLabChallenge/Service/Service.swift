@@ -21,39 +21,19 @@ class Service {
 
         if let url = URL(string: "https://order-plz.herokuapp.com/restaurants.json") {
            URLSession.shared.dataTask(with: url) { data, response, error in
-
               if let data = data {
-                
                   do {
-
-                      guard let jsonString = try JSONSerialization.jsonObject(with: data, options: []) as? JSON, let jsonArray = jsonString["restaurants"] as? [JSON] else { return }
-                      
-                    
+                    guard let jsonString = try JSONSerialization.jsonObject(with: data, options: []) as? JSON, let jsonArray = jsonString["restaurants"] as? [JSON] else { return }
                     var restaurants: [Restaurant] = []
-                    
                     jsonArray.forEach { (json) in
                         let restaurant = Restaurant(data: json)
-                        
-                        print(restaurant)
                         restaurants.append(restaurant)
                     }
-                    
-
-                    
                     completion(restaurants, nil)
-    
-
-                      
                   } catch {
-                    
                       completion(nil, nil)
-
-                      
                   }
-
                }
-            
-            
             completion(nil, nil )
 
            }.resume()
@@ -61,5 +41,28 @@ class Service {
 
     }
     
+    
+    func getRestaurantBy(id: Int, completion: @escaping (Restaurant?,
+    Error?)-> Void) {
+        if let url = URL(string: "https://order-plz.herokuapp.com/restaurants/\(id).json") {
+                    URLSession.shared.dataTask(with: url) { data, response, error in
+               if let data = data {
+                   do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else { return }
+                    let restaurant = Restaurant(data: json)
+                    completion(restaurant, nil)
+
+                   } catch {
+
+                       completion(nil, error)
+
+                   }
+
+                }
+
+            }.resume()
+         }
+    }
+
 }
 
