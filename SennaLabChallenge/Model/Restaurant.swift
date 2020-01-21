@@ -21,7 +21,7 @@ struct Restaurant {
     
     init(data: JSON) {
         self.id = data["id"] as! Int
-        self.image = data["image"] as? String
+        self.image = data["image_url"] as? String
         self.kind = data["kind"] as! String
         self.name = data["name"] as! String
 

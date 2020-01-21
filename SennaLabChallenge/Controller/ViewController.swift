@@ -31,13 +31,18 @@ class ViewController: UITableViewController {
         extendedLayoutIncludesOpaqueBars = true
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.separatorColor = .clear
-
+        navigationController?.navigationBar.isTranslucent = false
+        title = "Restaurants"
         view.addSubview(activityIndicatorView)
-        
         activityIndicatorView.centerInSuperview()
         registerCells()
 
         Service.shared.getRestaurants { (restaurants, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
             guard let restaurants = restaurants else { return }
             self.restaurants = restaurants
 

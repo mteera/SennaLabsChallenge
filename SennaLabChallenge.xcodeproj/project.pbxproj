@@ -16,9 +16,12 @@
 		B5747B2C23D59FEB0070BE4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5747B2B23D59FEB0070BE4A /* ViewController.swift */; };
 		B5747B3123D59FED0070BE4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5747B3023D59FED0070BE4A /* Assets.xcassets */; };
 		B5747B3423D59FED0070BE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5747B3223D59FED0070BE4A /* LaunchScreen.storyboard */; };
+		C955765EC77D6F38AB2C203F /* Pods_SennaLabChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A3FA4F6236AFE8AB7FBBC /* Pods_SennaLabChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40CC456472BCB01DAA8F8536 /* Pods-SennaLabChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SennaLabChallenge.debug.xcconfig"; path = "Target Support Files/Pods-SennaLabChallenge/Pods-SennaLabChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		4D0D91DEC70FE2A0FF0B314F /* Pods-SennaLabChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SennaLabChallenge.release.xcconfig"; path = "Target Support Files/Pods-SennaLabChallenge/Pods-SennaLabChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		B51CAF1D23D617EA0015877C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B51CAF2023D6183D0015877C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B51CAF2423D632F60015877C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		B5747B3023D59FED0070BE4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5747B3323D59FED0070BE4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5747B3523D59FED0070BE4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B79A3FA4F6236AFE8AB7FBBC /* Pods_SennaLabChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SennaLabChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +41,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C955765EC77D6F38AB2C203F /* Pods_SennaLabChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B70926B7E65D5068F05D69F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40CC456472BCB01DAA8F8536 /* Pods-SennaLabChallenge.debug.xcconfig */,
+				4D0D91DEC70FE2A0FF0B314F /* Pods-SennaLabChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		833A7D157DD6E1DCD1E37976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B79A3FA4F6236AFE8AB7FBBC /* Pods_SennaLabChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B51CAF1C23D617DF0015877C /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +111,8 @@
 			children = (
 				B5747B2623D59FEB0070BE4A /* SennaLabChallenge */,
 				B5747B2523D59FEB0070BE4A /* Products */,
+				6B70926B7E65D5068F05D69F /* Pods */,
+				833A7D157DD6E1DCD1E37976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5747B3823D59FED0070BE4A /* Build configuration list for PBXNativeTarget "SennaLabChallenge" */;
 			buildPhases = (
+				6B62F1C37F7B88905F6A5BC1 /* [CP] Check Pods Manifest.lock */,
 				B5747B2023D59FEB0070BE4A /* Sources */,
 				B5747B2123D59FEB0070BE4A /* Frameworks */,
 				B5747B2223D59FEB0070BE4A /* Resources */,
+				F13AEA3EE23CC261B7F4FE6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +207,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B62F1C37F7B88905F6A5BC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SennaLabChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13AEA3EE23CC261B7F4FE6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SennaLabChallenge/Pods-SennaLabChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SennaLabChallenge/Pods-SennaLabChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SennaLabChallenge/Pods-SennaLabChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5747B2023D59FEB0070BE4A /* Sources */ = {
@@ -326,6 +395,7 @@
 		};
 		B5747B3923D59FED0070BE4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40CC456472BCB01DAA8F8536 /* Pods-SennaLabChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +414,7 @@
 		};
 		B5747B3A23D59FED0070BE4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D0D91DEC70FE2A0FF0B314F /* Pods-SennaLabChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

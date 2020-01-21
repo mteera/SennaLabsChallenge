@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomTableViewCell: UITableViewCell {
     
@@ -14,6 +15,12 @@ class CustomTableViewCell: UITableViewCell {
         didSet {
             guard let restaurant = restaurant else { return }
             titleLabel.text = restaurant.name
+            
+            guard let urlString = restaurant.image else { return }
+            
+            let url = URL(string: urlString)
+            let placeholder = UIImage(named: "placeholder")
+            mainImageView.kf.setImage(with: url, placeholder: placeholder)
         }
     }
     
