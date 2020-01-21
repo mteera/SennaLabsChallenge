@@ -10,11 +10,8 @@ import Foundation
 
 class Service {
 
+    // Parsing json from the url and casting into an object.
     static let shared = Service()
-    
-    var usersSince = 0
-    var perPage = 20
-
 
     func getRestaurants(completion: @escaping ([Restaurant]?,
         Error?)-> Void) {
@@ -31,10 +28,9 @@ class Service {
                     }
                     completion(restaurants, nil)
                   } catch {
-                      completion(nil, nil)
+                      completion(nil, error)
                   }
                }
-            completion(nil, nil )
 
            }.resume()
         }
